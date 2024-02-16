@@ -32,7 +32,7 @@ def get_the_most_expensive_big_mac_price_by_year(year):
 
 if __name__ == "__main__":
      year = '2005'
-     country_code = 'mex'
+     country_code = 'MEX'
 
      print (get_big_mac_price_by_year(year,country_code))
      print(get_big_mac_price_by_country(country_code))
