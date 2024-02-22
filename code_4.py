@@ -9,8 +9,8 @@ def get_big_mac_price_by_year(year,country_code):
     #new_query = f"(date >= '{year}-01-01' & date <= '{year}-12-31') and iso_a3 == @country_code" # another option
     new_query = f"(date >= '{year}-01-01' & date <= '{year}-12-31') and iso_a3 =='{country_code}'"
     df_by_date = df.query(new_query)
-    #mean_dollar_price = round(df_by_date['dollar_price'].mean(),2) # original submission
-    mean_dollar_price = f"${round(df_by_date['dollar_price'].mean(),2)}"
+    mean_dollar_price = round(df_by_date['dollar_price'].mean(),2) # original submission
+    #mean_dollar_price = f"${round(df_by_date['dollar_price'].mean(),2)}" # this did not work in GitHub
     return mean_dollar_price
 
 def get_big_mac_price_by_country(country_code):
@@ -19,8 +19,8 @@ def get_big_mac_price_by_country(country_code):
         df_by_country = df.query(new_query)
         #df_by_country = df[df['iso_a3'] == country_code] # orignial submission
         #new_query = f"iso_a3 == @country_code" # another option
-        #price_by_country = round(df_by_country['dollar_price'].mean(),2) # original submission
-        price_by_country = f"${round(df_by_country['dollar_price'].mean(),2)}"
+        price_by_country = round(df_by_country['dollar_price'].mean(),2) # original submission
+        #price_by_country = f"${round(df_by_country['dollar_price'].mean(),2)}" #this did not work in GitHub
         return price_by_country
 
 def get_the_cheapest_big_mac_price_by_year(year):
